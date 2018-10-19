@@ -1,0 +1,11 @@
+- name: Download
+  unarchive:
+    src: https://dl.google.com/go/go{{ go.version }}.linux-amd64.tar.gz
+    dest: /usr/local
+    remote_src: yes
+
+- name: Set env for golang
+  copy:
+    src: go-env.sh
+    dest: /etc/profile.d
+
